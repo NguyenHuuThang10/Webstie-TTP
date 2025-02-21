@@ -174,5 +174,32 @@
             $result = $this->db->select($query);
             return $result;
         }
+
+        public function insert_contact_job($data) {
+            $yourname = mysqli_real_escape_string($this->db->link, $data['fullname']);
+            $tel = mysqli_real_escape_string($this->db->link, $data['phone']);
+            $youremail = mysqli_real_escape_string($this->db->link, $data['email']);
+            $message = mysqli_real_escape_string($this->db->link, $data['content']);
+            if($yourname == "" || $tel == "" || $youremail == "" || $message == "" ) {
+                $alert = "<span class='notok'>Bạn vui lòng điền đầy đủ thông tin !</span>";
+                return $alert;
+            }else{
+                $query = "INSERT INTO tbl_job_contacts(fullname,phone,email,content) values ('$yourname','$tel','$youremail','$message')";
+                $result = $this->db->insert($query);
+                if($result){
+                    $alert = "<span class='success'>Thêm thông tin thành công!</span>";
+                    return $alert;
+                }else{
+                    $alert = "<span class='notok'>Thất bại !</span>";
+                    return $alert;
+                }
+            }
+        }
+
+        public function show_contact_job() {
+            $query = "SELECT * FROM tbl_job_contacts";
+            $result = $this->db->select($query);
+            return $result;
+        }
     }
 ?>

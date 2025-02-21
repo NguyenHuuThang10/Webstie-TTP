@@ -5,7 +5,7 @@
 <?php
 	$fm = new Format();
 	$cs = new customer();
-	$show_contact = $cs -> show_contact();
+	$show_contact_job = $cs -> show_contact_job();
 	if(isset($_GET['postid'])){
 		$id = $_GET['postid'];
 		$delpost = $ps->del_post($id);
@@ -20,8 +20,8 @@
         <thead>
           <tr>
             <th>Id</th>
-            <th>Tên khách hàng</th>
-            <th>Số dt</th>
+            <th>Tên ứng viên</th>
+            <th>Số điện thoại</th>
             <th>Email</th>
             <th>Nội dung</th>
             <th>Chỉnh/Xóa</th>
@@ -29,19 +29,18 @@
         </thead>
         <tbody>
           <?php 
-					if($show_contact) {
+					if($show_contact_job) {
 						$i=0;
-						while($resule = $show_contact -> fetch_assoc()){
+						while($resule = $show_contact_job -> fetch_assoc()){
 							$i++;
 				?>
-          <tr class="odd gradeX">
+          <tr class="odd gradeX" style="text-align: center;">
             <td><?php echo $i ?> </td>
-            <td><?php echo $resule['yourname'] ?></td>
-            <td><?php echo $resule['tel'] ?></td>
-            <td><?php echo $resule['youremail'] ?></td>
+            <td><?php echo $resule['fullname'] ?></td>
+            <td><?php echo $resule['phone'] ?></td>
+            <td><?php echo $resule['email'] ?></td>
             <td><?php
-            $htmlspecialchars = $fm -> textShorten($resule['message'],500) ;
-            echo htmlspecialchars($htmlspecialchars);
+            echo $resule['content'];
             ?></td>
             <td><a href="#">Chỉnh Sửa</a> || <a
                 href="#"

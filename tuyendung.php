@@ -1,66 +1,150 @@
 <?php
 $title = "SALANEST-Tuyển dụng";
-include 'inc/header.php' ;?>
-<?php include 'inc/sale.php' ;?>
+include 'inc/header.php';
 
+include 'inc/sale.php';?>
+<a href="https://www.salanest.net/"><img src="img/banner_n-compressed.jpg" alt="banner" class="fullwidth" title="chương trình khuyến mãi"/></a>
+<div class="clear60"></div>
 <section>
-  <div class="main-breac">
-    <div class="container">
-      <span><a href="./" class="clblack">Trang chủ</a></span>
-      <span style="margin: 0 7px;">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#000000" class="bi bi-chevron-right"
-          viewBox="0 0 16 16">
-          <path fill-rule="evenodd"
-            d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
-        </svg>
-      </span>
-      <span class="clpink">Tuyển dụng</span>
-    </div>
+  
+  <div class="container">
+    <span><a href="./" class="clblack">Trang chủ</a></span>
+    <span style="margin: 0 7px;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#000000" class="bi bi-chevron-right"
+        viewBox="0 0 16 16">
+        <path fill-rule="evenodd"
+          d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+      </svg>
+    </span>
+    <span class="clpink">Tuyển dụng</span>
+    <div class="clear20"></div>
   </div>
   <div class="main-wraper ">
-    <div class="clear20"></div>
     <div class="cart_background">
-      <div class="row text-center">
+      <div class="row">
         <div class="col-12">
-          <h4 class="nomargin text-uppercase clredt">Đang cập nhật</h4>
-          <div class="loader loader--style6" title="5">
-            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="30px" viewBox="0 0 24 30"
-              style="enable-background:new 0 0 50 50;" xml:space="preserve">
-              <rect x="0" y="13" width="4" height="5" fill="var(--red--nhat)">
-                <animate attributeName="height" attributeType="XML" values="5;21;5" begin="0s" dur="0.6s"
-                  repeatCount="indefinite" />
-                <animate attributeName="y" attributeType="XML" values="13; 5; 13" begin="0s" dur="0.6s"
-                  repeatCount="indefinite" />
-              </rect>
-              <rect x="10" y="13" width="4" height="5" fill="var(--red--nhat)">
-                <animate attributeName="height" attributeType="XML" values="5;21;5" begin="0.15s" dur="0.6s"
-                  repeatCount="indefinite" />
-                <animate attributeName="y" attributeType="XML" values="13; 5; 13" begin="0.15s" dur="0.6s"
-                  repeatCount="indefinite" />
-              </rect>
-              <rect x="20" y="13" width="4" height="5" fill="var(--red--nhat)">
-                <animate attributeName="height" attributeType="XML" values="5;21;5" begin="0.3s" dur="0.6s"
-                  repeatCount="indefinite" />
-                <animate attributeName="y" attributeType="XML" values="13; 5; 13" begin="0.3s" dur="0.6s"
-                  repeatCount="indefinite" />
-              </rect>
-            </svg>
+          <div id="right">
+            <h1 class="text-center">Tuyển dụng</h1>
+            <div class="clear20"></div>
+            <div class="wap_box_new clear">
+              <?php
+                $get_job = $job -> show_job();
+                if($get_job){
+                  while($result = $get_job -> fetch_assoc()){
+              ?>
+              <div class="box_news clear">
+                <div class="row">
+                  <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xs-12 ">
+                    <a href="vi-tri/<?php echo $result['tuyendung_id'] ; ?>-<?php echo $result['tbl_url'] ; ?>.html"
+                      title="<?php echo $result['tuyendung_name'] ; ?>"><img  
+                        src="img/<?php echo $result['tuyendung_img'] ; ?>"
+                        alt="<?php echo $result['tuyendung_name'] ; ?>" /></a>
+                  </div>
+
+                  <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-xs-12">
+                    <div class="clear20"></div>
+                    <h3><a href="vi-tri/<?php echo $result['tuyendung_id'] ?>-<?php echo $result['tbl_url'] ; ?>.html"
+                        title="<?php echo $result['tuyendung_name'] ; ?>"><?php echo $result['tuyendung_name']?></a></h3>
+                    <p class="new_ngaydang">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" style="width:12px;">
+                        <path
+                          d="M128 0c17.7 0 32 14.3 32 32V64H288V32c0-17.7 14.3-32 32-32s32 14.3 32 32V64h48c26.5 0 48 21.5 48 48v48H0V112C0 85.5 21.5 64 48 64H96V32c0-17.7 14.3-32 32-32zM0 192H448V464c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V192zm64 80v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V272c0-8.8-7.2-16-16-16H80c-8.8 0-16 7.2-16 16zm128 0v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V272c0-8.8-7.2-16-16-16H208c-8.8 0-16 7.2-16 16zm144-16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V272c0-8.8-7.2-16-16-16H336zM64 400v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V400c0-8.8-7.2-16-16-16H80c-8.8 0-16 7.2-16 16zm144-16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V400c0-8.8-7.2-16-16-16H208zm112 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V400c0-8.8-7.2-16-16-16H336c-8.8 0-16 7.2-16 16z" />
+                      </svg>
+                      <?php echo $result['tuyendung_date'] ; ?>
+                    </p>
+                    <div class="clear20"></div>
+                    <div class="mota">
+                      Địa điểm: 
+                      <?php echo $result['tuyendung_location'] ?>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="box_news clear"></div>
+              <?php }} ?>
+
+              <?php 
+                $job_all = $job -> show_all_job();
+                $job_count = mysqli_num_rows($job_all);
+                $job_button = $job_count / 5;
+                if(!isset($_GET['trang'])) {
+                    $trang = 1;
+                }else{
+                    $trang = $_GET['trang'];
+                }
+              ?>
+              <ul class="pagination home-product__pagination">
+                <li class="pagination-item">
+                  <?php
+                    if($trang >=2){
+                  ?>
+                  <a href="tuyen-dung/trang<?php echo $trang - 1 ?>.html" class="pagination-item__link">
+                    <img class='' src='./img/left.svg' alt='' width='15'>
+                  </a>
+                  <?php } ?>
+                </li>
+
+                <?php
+                  for($i=1 ; $i <= ceil($job_button) ; $i++) {
+                ?>
+
+                <li class="pagination-item pagination-item__link-<?php if ($i == $trang) { echo "acctive"; } ?> ">
+                  <a href="tuyen-dung/trang<?php echo $i ?>.html" class="pagination-item__link">
+                    <?php echo $i ; ?>
+                  </a>
+                </li>
+
+                <?php } ?>
+
+                <li class="pagination-item">
+                  <?php
+                    if ($trang < ceil($job_button)){
+                  ?>
+                  <a href="tuyen-dung/trang<?php echo $trang + 1 ?>.html" class="pagination-item__link">
+                    <img class='' src='./img/right.svg' alt='' width='15'>
+                  </a>
+                  <?php } ?>
+                </li>
+              </ul>
+            </div>
           </div>
-          <div class="clear20"></div>
         </div>
       </div>
-    </div>
-  </div>
-  <div class="advertisement container_writing">
-    <div class="container ">
-      <div class="row">
-        <div class="col-xl-8">
-          <h1 class="text-danger">Đăng ký nhận thông tin ưu đãi và khuyến mãi.</h1>
-          <p>Thông tin của bạn sẽ được bảo mật tuyệt đối và bạn có thể đăng ký bất cứ lúc nào.</p>
+      <div class="pro-relative">
+        <div class="tit-pr">
+          <h1 class="bold clred nomargin text-uppercase">Sản phẩm bán chạy</h1>
+        </div>
+        <div class="clear20"></div>
+        <div class="img-slider">
+          <?php
+              $sp_rand = $product->getproduct_feathered_10();
+              if ($sp_rand) {
+                while ($result_rand= $sp_rand->fetch_assoc()) {
+              ?>
+          <div class="img-item">
+            <div class="home-product__item-img"
+              style="background-image:url(./img/<?php echo $result_rand['hinh']; ?>);"></div>
+            <div class="ct-item-pro">
+              <p class="bold item-name"><?php echo $result_rand['sanpham_name']; ?></p>
+              <div class="clear10"></div>
+              <div class="block">
+                <p class="old-pri">
+                  <?php echo number_format($result_rand['sanpham_gia']) . " đ"; ?></p>
+                <p class="new-pri bold">
+                  <?php echo number_format($result_rand['sanpham_giakhuyenmai']) . " đ"; ?>
+                </p>
+              </div>
+              <div class="clear10"></div>
+              <a href="chi-tiet/<?php echo $result_rand['sanpham_id'] ?>/<?php echo $result_rand['sanpham_url'] ?>.html"
+                class="addtocart">
+                xem sản phẩm
+              </a>
+            </div>
+          </div>
+          <?php } } ?>
         </div>
       </div>
     </div>
   </div>
 </section>
-<?php include 'inc/footer.php' ;?>
+<?php include 'inc/footer.php';?>

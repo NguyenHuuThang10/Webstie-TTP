@@ -54,7 +54,7 @@ header("Cache-Control: max-age=2592000");
   <meta content='index,follow,all' name='robots' />
   <meta property="og:image" content="https://salanest.com/img/salanest.png" />
 
-  <link rel="shortcut icon" href="./img/ttp.webp" />
+  <link rel="shortcut icon" href="./img/LOGO_TTP_2024-02.png" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="./css/lightslider.css" />
   <link rel="stylesheet" href="./css/nivo-slider.css">

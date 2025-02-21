@@ -95,7 +95,9 @@ header("Cache-Control: max-age=2592000");
         <li class="ic-grid-tables"><a href="postadd.php">Thêm bài viết</a></li>
         <li class="ic-grid-tables"><a href="postlist.php">Sửa/Xóa bài viết</a></li>
         <li class="ic-grid-tables"><a href="contact.php">Hỗ trợ khách hàng</a></li>
-
+        <li class="ic-grid-tables"><a href="jobadd.php">Thêm bài tuyển dụng</a></li>
+        <li class="ic-grid-tables"><a href="joblist.php">Sửa/Xóa tuyển dụng</a></li>
+        <li class="ic-grid-tables"><a href="jobcontact.php">Liên hệ tuyển dụng</a></li>
       </ul>
     </div>
     <div class="clear">

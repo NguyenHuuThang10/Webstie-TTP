@@ -18,6 +18,7 @@ $cat = new category();
 $brand = new brand();
 $product = new product();
 $ps = new post();
+$job = new job();
 ?>
 <?php
 header("Cache-Control: no-cache, must-revalidate");
@@ -59,7 +60,7 @@ header("Cache-Control: max-age=2592000");
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="./css/lightslider.css" />
   <link rel="stylesheet" href="./css/nivo-slider.css">
-  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/style.css?v=<?php echo rand() ?>" />
   <title><?php echo $title; ?></title>
 </head>
 
