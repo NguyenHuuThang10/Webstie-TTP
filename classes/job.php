@@ -130,7 +130,7 @@
                 $unique_image = substr(md5(time()),0,10).'.'.$file_ext;
                 $uploaded_image = "../img/".$unique_image;
 
-            if($tuyendung_name == "" || $tuyendung_location == "" || $tuyendung_noidung == "" || $tuyendung_date == "" || $tuyendung_luotxem == "" || $file_name == "" ) {
+            if($tuyendung_name == "" || $tuyendung_location == "" || $tuyendung_noidung == "" || $tuyendung_date == "" || $tuyendung_luotxem == "") {
                 $alert = "<span class='notok'>không được để trống</span>";
                 return $alert;
             }

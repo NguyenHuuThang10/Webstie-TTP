@@ -65,7 +65,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
     <div class="col-xl-6">
       <div class="register-wrap">
         <div class="register-form" id="dang-ky-ngay">
-          <h3>Gởi Thông Tin liên hệ</h3>
+          <h3>Gửi Thông Tin Ứng tuyển</h3>
           <?php
           if (isset($insertContact)) {
             echo $insertContact;
@@ -84,11 +84,11 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
               <input type="email" name="email" class="form-control" placeholder="Email:" required>
             </div>
             <div class="form-group">
-              <textarea id="txtmessage" name="content" class="form-control" placeholder="Nội dung:" required></textarea>
+              <textarea id="txtmessage" name="content" class="form-control" placeholder="Nội dung: vị trí ứng tuyển, số năm kinh nghiệm, sơ nét về kinh nghiệm làm việc" required></textarea>
             </div>
             <div class="btn-register-wrap">
-              <input type="submit" class="btn-regsiter-now" id="dangky" title="Gởi Thông Tin Hổ Trợ"
-                value="Gởi Thông Tin" name="submit">
+              <input type="submit" class="btn-regsiter-now" id="dangky" title="Gửi Thông Tin Hổ Trợ"
+                value="Gửi Thông Tin" name="submit">
             </div>
           </form>
         </div>

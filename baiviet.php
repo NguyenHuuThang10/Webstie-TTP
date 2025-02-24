@@ -45,7 +45,7 @@
           <div class="clear20"></div>
           <div class="mota"></div>
         </div>
-        <div class="content_text">
+        <div class="content_text noidungtd">
           <?php 
           echo $result['baiviet_noidung'] ; 
           ?>
